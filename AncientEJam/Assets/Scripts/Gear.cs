@@ -2,8 +2,13 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public interface Gear
+public abstract class Gear : MonoBehaviour
 {
-    bool CanUse(string required_item);
-    void Use();
+    
+    public bool CanUse(string required_item)
+    {
+        return required_item == this.gameObject.tag;
+    }
+
+    public abstract void Use();
 }
