@@ -13,6 +13,8 @@ public class script_BoomerangBehavior : MonoBehaviour
     public float throwTimeToTarget = 1f;
     public float throwDistance = 5f;
 
+    public float spinSpeed = 1f;
+
     public UnityEvent EndEvent = new UnityEvent();
 
     void Start()
@@ -45,6 +47,6 @@ public class script_BoomerangBehavior : MonoBehaviour
 
     private void Spin()
     {
-        transform.Rotate(new Vector3(0,1,0));
+        transform.Rotate(new Vector3(0,spinSpeed,0));
     }
 }

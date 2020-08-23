@@ -7,12 +7,10 @@ public class script_BoomerangController : Gear
     public GameObject boomerangPrefab;
 
     private Transform m_Parent;
-    private MeshRenderer m_Renderer;
 
     void Start()
     {
         m_Parent = transform.parent;
-        m_Renderer = this.GetComponent<MeshRenderer>();
     }
 
     void Update()
@@ -25,13 +23,16 @@ public class script_BoomerangController : Gear
 
     public override void Use()
     {
-        GameObject boomerang = Instantiate(boomerangPrefab);
+        GameObject boomerang = Instantiate(boomerangPrefab, transform.position, Quaternion.Euler(0,0,0));
         ToggleRenderer();
         boomerang.GetComponent<script_BoomerangBehavior>().EndEvent.AddListener(ToggleRenderer);
     }
 
     private void ToggleRenderer()
     {
-        m_Renderer.enabled = !m_Renderer.enabled;
+        foreach(MeshRenderer m in this.GetComponentsInChildren<MeshRenderer>())
+        {
+            m.enabled = !m.enabled;
+        }
     }
 }
