@@ -18,6 +18,6 @@ public class script_DeathWall : MonoBehaviour
 
     private void Update()
     {
-        rb.velocity = new Vector3(0f, 0f, 1f) * speed * Time.deltaTime;
+        rb.velocity = new Vector3(0f, 0f, 1f) * speed;
     }
 }

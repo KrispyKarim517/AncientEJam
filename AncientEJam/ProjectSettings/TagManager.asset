@@ -9,6 +9,8 @@ TagManager:
   - Lantern
   - Sword
   - Death Wall
+  - Floor
+  - Wall
   layers:
   - Default
   - TransparentFX
