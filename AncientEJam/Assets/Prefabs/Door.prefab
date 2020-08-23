@@ -146,6 +146,14 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 0.45577
       objectReference: {fileID: 0}
+    - target: {fileID: -4683669308469848369, guid: 91caca0c959aded4186ba15be16ddbc6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 150ef5d77f5562741a7c7a20a2afe135, type: 2}
+    - target: {fileID: -1439730007547781893, guid: 91caca0c959aded4186ba15be16ddbc6, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 150ef5d77f5562741a7c7a20a2afe135, type: 2}
     - target: {fileID: 919132149155446097, guid: 91caca0c959aded4186ba15be16ddbc6, type: 3}
       propertyPath: m_Name
       value: gate

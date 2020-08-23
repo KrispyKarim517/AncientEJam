@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class script_Sword : Gear
+public class script_Lantern : Gear
 {
     public override void Use()
     {

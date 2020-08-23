@@ -6,8 +6,7 @@ using UnityEngine;
 public class script_IntermediateTarget : Target
 {
     [Header("Door 1")]
-    [SerializeField] Target Door1 = null;
-    Animator Door1_anim;
+    [SerializeField] script_IntermediateIntermediateTarget Door1 = null;
 
     [Header("State of door when switch is flipped on")]
     [SerializeField] string Door1_on_state = "";
@@ -18,8 +17,7 @@ public class script_IntermediateTarget : Target
     
 
     [Header("Door 2")]
-    [SerializeField] Target Door2 = null;
-    Animator Door2_anim;
+    [SerializeField] script_IntermediateIntermediateTarget Door2 = null;
 
     [Header("State of door when switch is flipped on")]
     [SerializeField] string Door2_on_state = "";
@@ -31,12 +29,6 @@ public class script_IntermediateTarget : Target
     [Header("Keeps tracks of state of switch (true -> on, false -> off")]
     bool controller = true;
 
-    private void Awake()
-    {
-        Door1_anim = Door1.GetComponent<Animator>();
-        Door2_anim = Door2.GetComponent<Animator>();
-    }
-
     // Start is called before the first frame update
     void Start()
     {
@@ -45,8 +37,8 @@ public class script_IntermediateTarget : Target
         bool Door1_start = Door1_on_state.Equals(switch_start_state);
         bool Door2_start = Door2_on_state.Equals(switch_start_state);
 
-        Door1_anim.SetBool("Off_On", Door1_start);
-        Door2_anim.SetBool("Off_On", Door2_start);
+        Door1.SetAnim(Door1_start);
+        Door2.SetAnim(Door2_start);
     }
 
     public override void Activate()
