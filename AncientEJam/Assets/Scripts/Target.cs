@@ -21,7 +21,7 @@ public class Target : MonoBehaviour
         animator = this.GetComponent<Animator>();
     }
 
-    public void Activate()
+    public virtual void Activate()
     {
         okay = false;
         state_toggle = !state_toggle;
@@ -34,5 +34,15 @@ public class Target : MonoBehaviour
         yield return new WaitForSecondsRealtime(animation_length);
         blocker.enabled = !state_toggle;
         animation_complete.Invoke();
+    }
+
+    public void InvokeFinishedAnimationEvent()
+    {
+        animation_complete.Invoke();
+    }
+
+    public bool GetCurrentState()
+    {
+        return state_toggle;
     }
 }
