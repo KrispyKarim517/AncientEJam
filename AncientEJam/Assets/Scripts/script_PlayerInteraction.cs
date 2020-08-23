@@ -20,6 +20,8 @@ public class script_PlayerInteraction : MonoBehaviour
 
     public void SetGear(string gear)
     {
+        if (current_gear != null)
+            current_gear.gameObject.SetActive(false);
         switch (gear)
         {
             case "boomerang":
@@ -35,7 +37,7 @@ public class script_PlayerInteraction : MonoBehaviour
                 current_gear = lantern;
                 break;
         }
-
+        current_gear.gameObject.SetActive(true);
     }
 
 
