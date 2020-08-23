@@ -14,11 +14,23 @@ public class CustomAnimatorStateBehavior : StateMachineBehaviour
         switch_class = m_switch;
     }
 
+    public override void OnStateEnter(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
+    {
+        base.OnStateEnter(animator, stateInfo, layerIndex);
+        if (animator.GetCurrentAnimatorStateInfo(0).IsTag("first"))
+        {
+            //switch_class.AnimationStart();
+            Debug.Log("1");
+        }
+    }
+
     public override void OnStateExit(Animator animator, AnimatorStateInfo stateInfo, int layerIndex)
     {
-        if (animator.GetCurrentAnimatorStateInfo(0).Equals(stateInfo))
+        base.OnStateExit(animator, stateInfo, layerIndex);
+        if (animator.GetCurrentAnimatorStateInfo(0).IsTag("second"))
         {
-            switch_class.AnimationEnd();
+            //switch_class.AnimationEnd();
+            Debug.Log("2");
         }
     }
 }
