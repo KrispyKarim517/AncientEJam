@@ -111,12 +111,6 @@ AnimatorController:
   m_Name: Switch
   serializedVersion: 5
   m_AnimatorParameters:
-  - m_Name: Off_On
-    m_Type: 4
-    m_DefaultFloat: 0
-    m_DefaultInt: 0
-    m_DefaultBool: 0
-    m_Controller: {fileID: 0}
   - m_Name: Off
     m_Type: 9
     m_DefaultFloat: 0
@@ -153,13 +147,13 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: 4574712498547709118}
-    m_Position: {x: 360, y: 20, z: 0}
+    m_Position: {x: 470, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -774970913187372724}
-    m_Position: {x: 380, y: 230, z: 0}
+    m_Position: {x: 470, y: 230, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -125271259985698110}
-    m_Position: {x: 490, y: 130, z: 0}
+    m_Position: {x: 290, y: 100, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
