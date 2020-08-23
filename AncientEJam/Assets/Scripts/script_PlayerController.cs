@@ -4,25 +4,38 @@ using UnityEngine;
 
 public class script_PlayerController : MonoBehaviour
 {
-    public bool enabledKeyboard = true;
+    public static script_PlayerController instance;
+
+    [Header("Player Objects")]
     public GameObject model;
 
     private float m_movementSpeed = 5.0f;
     private Vector3 direction;
-    private bool canMove = true;
-    private bool canFire = true;
+
+    [Header("Player Permissions")]
+    public bool enabledKeyboard = true;
+    public bool canMove = true;
+    public bool canFire = true;
 
     private Rigidbody m_rigidbody;
 
+    private void Awake() 
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
+    }
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         model = this.gameObject;
         m_rigidbody = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
-    void Update()
+    private void Update()
     {
         // Keyboard Controls:
         // WASD to move
@@ -33,7 +46,7 @@ public class script_PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
                 Fire();
             
-            Move(new Vector3(Input.GetAxis("Horizontal"), 0f, Input.GetAxis("Vertical")).normalized);
+            Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized);
             Rotate();
         }
 
