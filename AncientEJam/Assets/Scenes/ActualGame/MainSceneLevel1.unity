@@ -2235,6 +2235,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 5.694786, y: 6.3693547, z: 0.71000016}
   m_Center: {x: 0.6330545, y: -0.0018866169, z: -5.0596774e-14}
+--- !u!114 &923071362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 923071360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d6c05f27cd38c0d44b6358df050b399b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &932255317
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5918,6 +5930,38 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 542396597, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 542396597, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_IsKinematic
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 542396597, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 542396598, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0278273
+      objectReference: {fileID: 0}
+    - target: {fileID: 542396598, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_Size.z
+      value: 0.6758039
+      objectReference: {fileID: 0}
+    - target: {fileID: 542396598, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_Center.x
+      value: 0.011452675
+      objectReference: {fileID: 0}
+    - target: {fileID: 542396598, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_Center.z
+      value: 0.08398306
+      objectReference: {fileID: 0}
+    - target: {fileID: 542396598, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_Size.x
+      value: 0.798159
+      objectReference: {fileID: 0}
     - target: {fileID: 2931105425388198904, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -5981,7 +6025,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3866066679978093199, guid: 15858ae810aa57e4397868809d0c2bba, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -18.878004
+      value: -18.878002
       objectReference: {fileID: 0}
     - target: {fileID: 3866066679978093199, guid: 15858ae810aa57e4397868809d0c2bba, type: 3}
       propertyPath: m_LocalPosition.y
