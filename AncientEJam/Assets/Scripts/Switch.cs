@@ -23,10 +23,8 @@ public class Switch : MonoBehaviour
 
     [SerializeField] float animation_length = 0f;
 
-    public void Activate(Gear gear_component)
+    public virtual void Activate()
     {
-        //Debug.Log("CALLED");
-        gear_component.Use();
         state_toggle = !state_toggle;
 
         if (state_toggle)
@@ -38,7 +36,6 @@ public class Switch : MonoBehaviour
             animator.SetTrigger("Off");
         }
 
-        //player.Unequip();
         StartCoroutine(WaitForAnimationEnd());
     }
 
@@ -67,7 +64,7 @@ public class Switch : MonoBehaviour
 
     private void Update()
     {
-        if (colliding && Input.GetKeyDown(KeyCode.Space) && okay)
+        if (colliding && GameInputManager.GetKeyDown("Interact") && okay)
         {
             Debug.Log("interaction");
             var interact_component = player_collider.GetComponent<script_PlayerInteraction>();
@@ -77,7 +74,8 @@ public class Switch : MonoBehaviour
                 var gear_component = interact_component.GetGear();
                 if (gear_component.CanUse(desired_equipment))
                 {
-                    this.Activate(gear_component);
+                    gear_component.Use();
+                    this.Activate();
                 }
             }
             okay = false;

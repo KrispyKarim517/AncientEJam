@@ -91,9 +91,10 @@ GameObject:
   m_Component:
   - component: {fileID: 3321391969093617587}
   - component: {fileID: 570904317994397652}
+  - component: {fileID: 8024410914640251328}
   m_Layer: 0
   m_Name: BoomerangPrefab
-  m_TagString: Untagged
+  m_TagString: Boomerang
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -133,6 +134,19 @@ MonoBehaviour:
   EndEvent:
     m_PersistentCalls:
       m_Calls: []
+--- !u!65 &8024410914640251328
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2692067124697455881}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.4608102, y: 1, z: 6.8613243}
+  m_Center: {x: 0.6421422, y: 0, z: 0.035247207}
 --- !u!1 &5857844590605967432
 GameObject:
   m_ObjectHideFlags: 0
