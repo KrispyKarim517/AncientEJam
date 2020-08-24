@@ -1164,6 +1164,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bd1507e255a4c49913c2fb9e51989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state_toggle: 0
   animation_complete:
     m_PersistentCalls:
       m_Calls: []
@@ -1380,6 +1381,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bd1507e255a4c49913c2fb9e51989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state_toggle: 0
   animation_complete:
     m_PersistentCalls:
       m_Calls: []
@@ -3005,8 +3007,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.78484344, y: 2.765297, z: 8.869489}
-  m_Center: {x: -13.111773, y: 9.30012, z: 5.727586}
+  m_Size: {x: 0.78484344, y: 2.6640701, z: 7.986091}
+  m_Center: {x: -13.111773, y: 9.350733, z: 5.8485045}
 --- !u!1001 &1084528063
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3332,6 +3334,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bd1507e255a4c49913c2fb9e51989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state_toggle: 0
   animation_complete:
     m_PersistentCalls:
       m_Calls: []
@@ -3617,6 +3620,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bd1507e255a4c49913c2fb9e51989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state_toggle: 0
   animation_complete:
     m_PersistentCalls:
       m_Calls: []
@@ -5482,6 +5486,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c1bd1507e255a4c49913c2fb9e51989d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state_toggle: 0
   animation_complete:
     m_PersistentCalls:
       m_Calls: []
