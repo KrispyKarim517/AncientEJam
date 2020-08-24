@@ -11,6 +11,7 @@ TagManager:
   - Death Wall
   - Floor
   - Wall
+  - AudioManager
   layers:
   - Default
   - TransparentFX

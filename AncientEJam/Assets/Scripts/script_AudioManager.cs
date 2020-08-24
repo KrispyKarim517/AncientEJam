@@ -11,6 +11,7 @@ public class script_AudioManager : MonoBehaviour
     private AudioSource[] sources;
 
     public float fadeDuration = .75f;
+    [Range(0f, 1f)] public float maxVolume = 1f;
 
     private void Start() 
     {
@@ -124,18 +125,18 @@ public class script_AudioManager : MonoBehaviour
         }
     }
 
-    public static IEnumerator FadeIn(AudioSource audioSource, float fadeTime)
+    public IEnumerator FadeIn(AudioSource audioSource, float fadeTime)
     {
         audioSource.volume = 0;
-        while(audioSource.volume < 1) 
+        while(audioSource.volume < maxVolume) 
         {
-            audioSource.volume += 1 * Time.deltaTime / fadeTime;
+            audioSource.volume += maxVolume * Time.deltaTime / fadeTime;
             yield return null;
         }
-        audioSource.volume = 1;
+        audioSource.volume = maxVolume;
     }
 
-    public static IEnumerator FadeOut(AudioSource audioSource, float fadeTime) 
+    public IEnumerator FadeOut(AudioSource audioSource, float fadeTime) 
     {
         float startVolume = audioSource.volume;
         while (audioSource.volume > 0) 
@@ -144,6 +145,13 @@ public class script_AudioManager : MonoBehaviour
             yield return null;
         }
         audioSource.Stop();
-        audioSource.volume = 1;
+        audioSource.volume = maxVolume;
+    }
+    
+    public void SetMaxVolume(float newVolume)
+    {
+        if (newVolume > 1f) maxVolume = 1f;
+        else if (newVolume < 0f) maxVolume = 0f;
+        else maxVolume = newVolume;
     }
 }
