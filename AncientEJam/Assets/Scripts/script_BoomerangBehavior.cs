@@ -8,6 +8,7 @@ public class script_BoomerangBehavior : MonoBehaviour
 {
     private Vector3 startingLocation;
     private Vector3 velocity = Vector3.zero;
+    private bool started;
 
     public Vector3 Target;
     public float throwTimeToTarget = 1f;
@@ -17,15 +18,18 @@ public class script_BoomerangBehavior : MonoBehaviour
 
     public UnityEvent EndEvent = new UnityEvent();
 
-    void Start()
+
+    public void StartBoomerang(Transform loc)
     {
-        startingLocation = this.transform.position;
+        startingLocation = loc.position;
         Target = startingLocation + (transform.forward * throwDistance);
+        started = true;
     }
 
     void Update()
     {
-        Move();
+        if(started)
+            Move();
         Spin();
     }
 

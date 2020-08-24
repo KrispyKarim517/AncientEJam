@@ -24,6 +24,7 @@ public class script_BoomerangController : Gear
     public override void Use()
     {
         GameObject boomerang = Instantiate(boomerangPrefab, transform.position, Quaternion.Euler(0,0,0));
+        boomerang.GetComponent<script_BoomerangBehavior>().StartBoomerang(m_Parent);
         ToggleRenderer();
         boomerang.GetComponent<script_BoomerangBehavior>().EndEvent.AddListener(ToggleRenderer);
     }
