@@ -46,7 +46,10 @@ public class script_PlayerController : MonoBehaviour
             if (Input.GetKeyDown(KeyCode.Space))
                 Fire();
             
-            Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized);
+            // Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized);
+            Move(new Vector3(-Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical"),
+                 0f, -Input.GetAxisRaw("Horizontal") - Input.GetAxisRaw("Vertical")).normalized);
+            // Move(new Vector3(Input.GetAxisRaw("Vertical"), 0f, -Input.GetAxisRaw("Vertical")).normalized);
             Rotate();
         }
 
