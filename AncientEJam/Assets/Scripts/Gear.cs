@@ -7,7 +7,7 @@ public abstract class Gear : MonoBehaviour
     
     public bool CanUse(string required_item)
     {
-        return required_item == this.gameObject.tag;
+        return required_item.Equals(this.gameObject.tag);
     }
 
     public abstract void Use();

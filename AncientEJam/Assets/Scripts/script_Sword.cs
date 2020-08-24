@@ -6,6 +6,6 @@ public class script_Sword : Gear
 {
     public override void Use()
     {
-        Debug.LogError("USING");
+        Debug.Log("USING");
     }
 }

@@ -27,7 +27,7 @@ public class script_IntermediateTarget : Target
 
 
     [Header("Keeps tracks of state of switch (true -> on, false -> off")]
-    bool controller = true;
+    public bool controller = true;
 
     // Start is called before the first frame update
     void Start()
@@ -43,11 +43,13 @@ public class script_IntermediateTarget : Target
 
     public override void Activate()
     {
+        controller = !controller;
+
         string desired_Door1_state = controller ? Door1_on_state : Door1_off_state;
         string desired_Door2_state = controller ? Door2_on_state : Door2_off_state;
 
-        string current_Door1_state = Door1.GetCurrentState() ? "On" : "Off";
-        string current_Door2_state = Door2.GetCurrentState() ? "On" : "Off";
+        string current_Door1_state = Door1.GetCurrentState() ? "Off" : "On";
+        string current_Door2_state = Door2.GetCurrentState() ? "Off" : "On";
 
         if (!desired_Door1_state.Equals(current_Door1_state))
             Door1.Activate();
@@ -59,6 +61,5 @@ public class script_IntermediateTarget : Target
         else
             Door2.InvokeFinishedAnimationEvent();
 
-        controller = !controller;
     }
 }

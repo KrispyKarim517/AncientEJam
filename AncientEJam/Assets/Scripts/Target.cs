@@ -8,9 +8,7 @@ public class Target : MonoBehaviour
     Collider blocker;
     Animator animator;
 
-    bool state_toggle = false;
-
-    public bool okay = true;
+    public bool state_toggle = false;
 
     public UnityEvent animation_complete = new UnityEvent();
 
@@ -23,7 +21,6 @@ public class Target : MonoBehaviour
 
     public virtual void Activate()
     {
-        okay = false;
         state_toggle = !state_toggle;
         animator.SetBool("Off_On", state_toggle);
         StartCoroutine(WaitForAnimationEnd());
