@@ -4,20 +4,21 @@ using UnityEngine;
 
 public class script_Button : MonoBehaviour
 {
-    [SerializeField] script_BridgeLower bridgeLower;
+    [SerializeField] script_BridgeLower bridgeLower = null;
 
     bool activated = false;
 
 
     private void OnTriggerEnter(Collider other)
     {
-        //if (other.tag.Equals("Boomerang"))
-        //{
+        Debug.Log(other.tag);
+        if (other.tag.Equals("Boomerang"))
+        {
             if (!activated)
             {
                 Activate();
             }
-        //}
+        }
     }
 
     public void Activate()

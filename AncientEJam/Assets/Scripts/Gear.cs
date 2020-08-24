@@ -11,4 +11,8 @@ public abstract class Gear : MonoBehaviour
     }
 
     public abstract void Use();
+    public virtual void UnUse()
+    {
+        
+    }
 }
