@@ -52,6 +52,11 @@ public static class GameInputManager
         reverseKeyMapping[key] = keyMap;
     }
 
+    public static bool GetKey(string keyMap) 
+    {
+        return Input.GetKey(keyMapping[keyMap]);
+    }
+
     public static bool GetKeyDown(string keyMap)
     {
         return Input.GetKeyDown(keyMapping[keyMap]);

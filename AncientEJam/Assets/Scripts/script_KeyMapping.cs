@@ -16,17 +16,19 @@ using TMPro;
 */
 public class script_KeyMapping : MonoBehaviour
 {
+    public static script_KeyMapping instance = null;
+
     [Header("Buttons")]
     [SerializeField] private Button[] arr_Buttons = new Button[6]; // The buttons
     [SerializeField] private TextMeshProUGUI[] arr_TMProForButtons = new TextMeshProUGUI[6]; // The buttons' TMPro text components (to be updated upon new key presses)
-    private string[] arr_KeyMapNames = new string[6]; // The key mappings registered in the GameInputManager
+    public string[] arr_KeyMapNames = new string[6]; // The key mappings registered in the GameInputManager
     
     [Header("Notification Script")]
     [SerializeField] private script_PopUpWindow ref_PopUpWindow = null;
     
     [Header("Options Menu Buttons Script")]
     [SerializeField] private script_OptionsMenuButtons ref_OptionsMenuButtons = null;
-    
+
     // KeyCodes that cannot be selected (because it would interfere with a different feature / be inconvenient
     private static KeyCode[] arr_ForbiddenKeyCodes = new KeyCode[8]
     {
@@ -121,6 +123,11 @@ public class script_KeyMapping : MonoBehaviour
     // Update the buttons' TMPro text components to have the correct keycodes displayed
     private void Awake()
     {
+        if(instance == null)  
+            instance = this;
+        else 
+            Destroy(this.gameObject);
+
         arr_KeyMapNames = GameInputManager.GetKeyMaps();
         for (int i = 0; i < arr_KeyMapNames.Length; i++)
         {

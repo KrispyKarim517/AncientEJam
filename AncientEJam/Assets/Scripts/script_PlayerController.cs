@@ -43,17 +43,16 @@ public class script_PlayerController : MonoBehaviour
         // Left Click to use current item
         if (enabledKeyboard)
         {
+            print(GameInputManager.GetKey("Forward"));
+
             if (Input.GetKeyDown(KeyCode.Space))
                 Fire();
             //get the Input from Horizontal axis
-            float horizontalInput = -Input.GetAxisRaw("Horizontal");
+            float horizontalInput =  (int)(GameInputManager.GetKey("Left") ? 1 : 0) - (int)(GameInputManager.GetKey("Right") ? 1 : 0);
             //get the Input from Vertical axis
-            float verticalInput = -Input.GetAxisRaw("Vertical");
+            float verticalInput = (int)(GameInputManager.GetKey("Backward") ? 1 : 0) - (int)(GameInputManager.GetKey("Forward") ? 1 : 0);
             transform.position = transform.position + new Vector3(horizontalInput * m_movementSpeed * Time.deltaTime, 0, verticalInput * m_movementSpeed * Time.deltaTime);
-            //Move(new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical")).normalized);
-            //Move(new Vector3(-Input.GetAxisRaw("Horizontal") + Input.GetAxisRaw("Vertical"),
-            //   0f, -Input.GetAxisRaw("Horizontal") - Input.GetAxisRaw("Vertical")).normalized);
-            //Move(new Vector3(Input.GetAxisRaw("Vertical"), 0f, -Input.GetAxisRaw("Vertical")).normalized);
+
             Rotate();
         }
 
