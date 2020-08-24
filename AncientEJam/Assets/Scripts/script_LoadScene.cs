@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class script_LoadScene : MonoBehaviour
 {
-    void onTriggerEnter(Collider other)
+    void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.tag == "Player")
         {
