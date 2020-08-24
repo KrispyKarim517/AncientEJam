@@ -9,14 +9,24 @@ public class script_PlayerInteraction : MonoBehaviour
     [SerializeField] Gear sword     = null;
     [SerializeField] Gear manget    = null;
     [SerializeField] Gear boomerang = null;
+    string[] gear_arr;
+    int index = 1;
 
     private Gear current_gear = null;
 
     private void Start()
     {
         SetGear("sword");
+        gear_arr = new string[4] { "lantern", "sword", "magnet", "boomerang" };
     }
-
+    private void Update()
+    {
+        if (GameInputManager.GetKeyDown("Cycle_Tool"))
+        {
+            index = (index != 3) ? index + 1 : 0;
+            SetGear(gear_arr[index]);
+        }
+    }
 
     public void SetGear(string gear)
     {
