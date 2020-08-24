@@ -49,7 +49,7 @@ public class script_PlayerInteraction : MonoBehaviour
                 current_gear = lantern;
                 break;
         }
-       // current_gear.gameObject.SetActive(true);
+       current_gear.gameObject.SetActive(true);
     }
 
     public Gear GetGear()
