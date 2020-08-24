@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 2138677392}
-  m_IndirectSpecularColor: {r: 0.5652217, g: 0.6355112, b: 0.71967643, a: 1}
+  m_IndirectSpecularColor: {r: 0.56522167, g: 0.63551116, b: 0.7196758, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1598,7 +1598,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2747365968213940100, guid: c9e02891f51df0b4d839d056431e6ee5, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2747365968213940100, guid: c9e02891f51df0b4d839d056431e6ee5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2391,7 +2391,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2747365968213940100, guid: c9e02891f51df0b4d839d056431e6ee5, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2747365968213940100, guid: c9e02891f51df0b4d839d056431e6ee5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -4731,6 +4731,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5248be3cf1c38049917bf05948ecd4e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  SINGLE_SWITCH_OVERRIDE: 0
 --- !u!1001 &1176395268
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8245,8 +8246,8 @@ Transform:
   m_LocalPosition: {x: 0.022697002, y: 5.9613743, z: -5.594013}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 1146932586}
   - {fileID: 247184476}
+  - {fileID: 1146932586}
   - {fileID: 1435379698}
   - {fileID: 110303718}
   - {fileID: 1667341658}
@@ -9798,6 +9799,10 @@ PrefabInstance:
       propertyPath: ref_ToolDisplayUI
       value: 
       objectReference: {fileID: 149363034}
+    - target: {fileID: 1459825285, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: ring
+      value: 
+      objectReference: {fileID: 168015120}
     - target: {fileID: 2931105425388198904, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.22042605
