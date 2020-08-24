@@ -65,6 +65,8 @@ public class script_UIManager : MonoBehaviour
     
     public void Restart()
     {
+        DisplayGameOverMenu(false);
+        Time.timeScale = 1f;
         SceneManager.LoadScene(1);
     }
     
