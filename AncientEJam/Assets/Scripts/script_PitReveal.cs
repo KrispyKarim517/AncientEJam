@@ -11,7 +11,7 @@ public class script_PitReveal : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Lantern")
         {
             GetComponent<Renderer>().enabled = true;
         }
@@ -19,7 +19,7 @@ public class script_PitReveal : MonoBehaviour
 
     void OnTriggerExit(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.tag == "Lantern")
         {
             GetComponent<Renderer>().enabled = false;
         }

@@ -34,6 +34,10 @@ public class script_PlayerInteraction : MonoBehaviour
             {
                 current_gear.Use();
             }
+            else if (current_gear == lantern)
+            {
+                current_gear.Use();
+            }
         }
     }
 
