@@ -15,6 +15,7 @@ public class script_UIManager : MonoBehaviour
     [SerializeField] private GameObject gobj_OptionsMenu = null;
     [SerializeField] private GameObject gobj_PauseMenu = null;
     [SerializeField] private GameObject gobj_GameOver = null;
+    [SerializeField] private GameObject gobj_Win = null;
     
     private static script_UIManager instance_UIManager;
     
@@ -55,6 +56,11 @@ public class script_UIManager : MonoBehaviour
     public void DisplayGameOverMenu(bool bool_temp_isVisible)
     {
         gobj_GameOver.SetActive(bool_temp_isVisible);
+    }
+    
+    public void DisplayWinnerScreen(bool bool_temp_isVisible)
+    {
+        gobj_Win.SetActive(bool_temp_isVisible);
     }
     
     public void GoToMainMenu()
