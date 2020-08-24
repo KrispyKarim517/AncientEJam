@@ -6,6 +6,8 @@ using System;
 
 public class script_BoomerangBehavior : MonoBehaviour
 {
+    public static script_BoomerangBehavior instance = null;
+
     private Vector3 startingLocation;
     private Vector3 velocity = Vector3.zero;
     private bool started;
@@ -24,6 +26,14 @@ public class script_BoomerangBehavior : MonoBehaviour
         startingLocation = loc.position;
         Target = startingLocation + (loc.forward * throwDistance);
         started = true;
+    }
+
+    void Awake() 
+    {
+        if (instance == null)
+            instance = this;
+        else
+            Destroy(this.gameObject);
     }
 
     void Update()
@@ -52,5 +62,12 @@ public class script_BoomerangBehavior : MonoBehaviour
     private void Spin()
     {
         transform.Rotate(new Vector3(0,spinSpeed,0));
+    }
+
+    private void OnCollisionEnter(Collision collsiion) 
+    {
+        Destroy(this.gameObject);
+        // Target = startingLocation;
+
     }
 }
