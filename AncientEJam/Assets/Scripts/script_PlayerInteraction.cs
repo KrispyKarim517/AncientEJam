@@ -10,21 +10,23 @@ public class script_PlayerInteraction : MonoBehaviour
     [SerializeField] Gear manget    = null;
     [SerializeField] Gear boomerang = null;
     string[] gear_arr;
-    int index = 1;
+    int index = 0;
+    [SerializeField] script_ToolDisplayUI ref_ToolDisplayUI = null;
 
     private Gear current_gear = null;
 
     private void Start()
     {
         SetGear("sword");
-        gear_arr = new string[4] { "lantern", "sword", "magnet", "boomerang" };
+        gear_arr = new string[4] {"lantern", "boomerang", "sword", "magnet"};
     }
     private void Update()
     {
-        if (GameInputManager.GetKeyDown("Cycle_Tool"))
+        if (GameInputManager.GetKeyDown("Cycle"))
         {
             index = (index != 3) ? index + 1 : 0;
             SetGear(gear_arr[index]);
+            ref_ToolDisplayUI.CycleThroughTools();
         }
     }
 
@@ -47,12 +49,16 @@ public class script_PlayerInteraction : MonoBehaviour
                 current_gear = lantern;
                 break;
         }
-        current_gear.gameObject.SetActive(true);
+       // current_gear.gameObject.SetActive(true);
     }
-
 
     public Gear GetGear()
     {
         return current_gear;
+    }
+    
+    public int GetIndex()
+    {
+        return index;
     }
 }
