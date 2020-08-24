@@ -12,6 +12,7 @@ TagManager:
   - Floor
   - Wall
   - AudioManager
+  - UIManager
   layers:
   - Default
   - TransparentFX

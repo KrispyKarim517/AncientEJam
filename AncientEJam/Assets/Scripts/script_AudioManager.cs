@@ -13,6 +13,13 @@ public class script_AudioManager : MonoBehaviour
     public float fadeDuration = .75f;
     [Range(0f, 1f)] public float maxVolume = 1f;
 
+    private void Awake()
+    {
+        if (!instance) instance = this;
+        else Destroy(this.gameObject);
+        DontDestroyOnLoad(this.gameObject);
+    }
+
     private void Start() 
     {
         instance = this;

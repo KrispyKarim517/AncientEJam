@@ -28,8 +28,9 @@ public class script_KeyMapping : MonoBehaviour
     [SerializeField] private script_OptionsMenuButtons ref_OptionsMenuButtons = null;
     
     // KeyCodes that cannot be selected (because it would interfere with a different feature / be inconvenient
-    private static KeyCode[] arr_ForbiddenKeyCodes = new KeyCode[7]
+    private static KeyCode[] arr_ForbiddenKeyCodes = new KeyCode[8]
     {
+        KeyCode.Escape,
         KeyCode.Mouse0,
         KeyCode.Mouse1,
         KeyCode.Mouse2,
