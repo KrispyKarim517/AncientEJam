@@ -22,7 +22,7 @@ public class script_BoomerangBehavior : MonoBehaviour
     public void StartBoomerang(Transform loc)
     {
         startingLocation = loc.position;
-        Target = startingLocation + (transform.forward * throwDistance);
+        Target = startingLocation + (loc.forward * throwDistance);
         started = true;
     }
 
