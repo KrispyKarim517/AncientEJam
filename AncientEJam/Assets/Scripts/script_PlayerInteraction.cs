@@ -17,7 +17,7 @@ public class script_PlayerInteraction : MonoBehaviour
 
     private void Start()
     {
-        SetGear("sword");
+        SetGear("lantern");
         gear_arr = new string[4] {"lantern", "boomerang", "sword", "magnet"};
     }
     private void Update()
@@ -28,12 +28,22 @@ public class script_PlayerInteraction : MonoBehaviour
             SetGear(gear_arr[index]);
             ref_ToolDisplayUI.CycleThroughTools();
         }
+        else if (GameInputManager.GetKeyDown("Interact"))
+        {
+            if (current_gear == manget)
+            {
+                current_gear.Use();
+            }
+        }
     }
 
     public void SetGear(string gear)
     {
         if (current_gear != null)
+        {
             current_gear.gameObject.SetActive(false);
+            current_gear.UnUse();
+        }
         switch (gear)
         {
             case "boomerang":
