@@ -6326,6 +6326,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2931105425388198904, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931105425388198904, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2931105425388198904, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2931105425388226520, guid: 0a24e75adc478bd4cb707a825aaa5a6f, type: 3}
       propertyPath: m_Name
       value: Mummy_Mon
