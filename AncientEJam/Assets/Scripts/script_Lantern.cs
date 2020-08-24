@@ -18,6 +18,7 @@ public class script_Lantern : Gear
     {
         if(ring.activeSelf == false)
         {
+            script_AudioManager.instance.PlaySound("lantern", null, false, script_AudioManager.instance.maxVolume);
             ring.SetActive(true);
         }
         else

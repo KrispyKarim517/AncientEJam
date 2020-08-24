@@ -20,6 +20,8 @@ public class script_BoomerangBehavior : MonoBehaviour
 
     public UnityEvent EndEvent = new UnityEvent();
 
+    private List<string> soundTitles;// = new List<string>() {"boomer_goingstart"};
+
 
     public void StartBoomerang(Transform loc)
     {
@@ -34,6 +36,7 @@ public class script_BoomerangBehavior : MonoBehaviour
             instance = this;
         else
             Destroy(this.gameObject);
+        soundTitles = new List<string>() {"boomer_goingstart"};
     }
 
     void Update()
@@ -41,6 +44,10 @@ public class script_BoomerangBehavior : MonoBehaviour
         if(started)
             Move();
         Spin();
+
+        string title = soundTitles[UnityEngine.Random.Range(0, soundTitles.Count)];
+
+        script_AudioManager.instance.PlaySound(title, null, false, script_AudioManager.instance.maxVolume);
     }
 
     private void Move()
